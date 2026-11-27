@@ -1,0 +1,14 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "multichain_address_validator",
+    hdrs = ["include/allswap/address_validator.hpp"],
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "address_validator_test",
+    srcs = ["tests/address_validator_test.cpp"],
+    deps = [":multichain_address_validator"],
+)
